@@ -1,0 +1,10 @@
+using PyPlot
+using PyCall
+
+
+#plt.subplot(221)
+x = rand(10)
+y = rand(10)
+plt.plot(x,x,color="black")
+tight_layout()
+gcf()
