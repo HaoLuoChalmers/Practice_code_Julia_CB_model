@@ -72,7 +72,7 @@ plt.axis([0, 8.55, 0, 31])
 tight_layout();
 
 
-# #Plot Acetate and Succinate
+#Plot Acetate and Succinate
 plt.subplot(223)
 plt.plot(t,xAce,color="black")
 plt.plot(tKim,AKim,color="black","--")
@@ -88,8 +88,10 @@ plt.xticks(xt,fontsize=tsize)
 plt.yticks([0:10:25;],fontsize=tsize)
 plt.axis([0,8.55,0,23])
 tight_layout()
-# # #gcf()
-# # #Plot Ethanol
+
+
+
+#Plot Ethanol
 plt.subplot(224)
 plt.plot(t,xEth,color="black")
 plt.plot(tKim,EKim,color="black","--")
