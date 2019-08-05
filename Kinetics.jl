@@ -12,13 +12,14 @@ function Kinetics(t,x,DF)
   e4 = x[4];
   e5 = x[5];
   e6 = x[6];
-  M_glc = x[7];
-  M_suc = x[8];
-  M_for = x[9];
-  M_lac = x[10];
-  M_ace = x[11];
-  M_eth = x[12];
-  M_bio = x[13];
+  e7 = x[7];
+  M_glc = x[7+1];
+  M_suc = x[8+1];
+  M_for = x[9+1];
+  M_lac = x[10+1];
+  M_ace = x[11+1];
+  M_eth = x[12+1];
+  M_bio = x[13+1];
 
   #Parametrs from DF
   kmax = DF["ReactionRateVector"]
@@ -49,7 +50,7 @@ function Kinetics(t,x,DF)
   push!(rE,ke*M_glc/(K[4]+M_glc))
   push!(rE,ke*M_glc/(K[5]+M_glc))
   push!(rE,ke*M_glc/(K[6]+M_glc))
-
+  push!(rE,ke*M_for^2/(K[7]^2+M_for^2))
   #GrowthRate
   fill!(rG,0.0)
   for i = 1:num_modes

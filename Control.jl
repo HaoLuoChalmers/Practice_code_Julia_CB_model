@@ -16,7 +16,7 @@ function Control(t,x,rM,rE,DF)
   push!(cybernetic_var,(Z[1,5]*rM[5]))
   push!(cybernetic_var,(Z[1,6]*rM[6]))
   push!(cybernetic_var,(Z[1,7]*rM[7]))
-
+  #println(Z)
   #Initialize cybernetic variables u and v
   u = zeros(num_modes)
   v = zeros(num_modes)
@@ -25,8 +25,8 @@ function Control(t,x,rM,rE,DF)
     v[i] = cybernetic_var[i]/maximum(cybernetic_var)
   end
   #Following Kim et al. (2008) Assuming Formate activity is at its maximum of unity
-  u[u.==0] .= 1
-  v[v.==0] .= 1
+   u[u.==0] .= 1
+   v[v.==0] .= 1
 
   return u, v
 end

@@ -46,6 +46,7 @@ function Data_Cybernetic(tStart,tStop,tStep)
     0.9; # e4
     0.9; # e5
     0.9; # e6
+    0.9;
     Glc[1]; # M_glc
     Suc[1]; # M_suc
     For[1];  # M_for
