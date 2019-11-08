@@ -35,10 +35,7 @@ function Balances(t,x,dxdt_vector,DF)
 
   #Define Control Vector
   (u,v) = Control(t,x,rM,rE,DF)
-  # println('u')
-  # println(u)
-  # println('v')
-  # println(v)
+
 
   #V = eye(length(v)).*v
   #V = Array(Diagonal(fill(1.0, (length(v)))))*v
@@ -60,24 +57,22 @@ function Balances(t,x,dxdt_vector,DF)
   dxdt_vector[6] = alpha + rE[6]*u[6] - (beta+mu)*e6;
   dxdt_vector[7] = alpha + rE[7]*u[7] - (beta+mu)*e7;
 
-  # println("rM",rM)
-  # println("M_bio",M_bio)
-  #
-  # #println(alpha)
-  # #println(beta)
-  # println("rE",rE)
-  # println("u",u)
-  # println("v",v)
 
-  #
-  # println("mu",mu)
-  # println("e",x[1:6])
-  #
-  #
-  # println('\n')
 
   #Metabolite Balances
   dxdt_vector[8:14] = S[1:7,:]*Z*V*rM*M_bio
+
+  println("rM",rM)
+  println("rE",rE)
+  println("M_bio",M_bio)
+  println("u",u)
+  println("v",v)
+  println("mu",mu)
+  println("dxdt_vector",dxdt_vector)
+  println('x',x)
+  println('\n')
+
+
 
   return dxdt_vector
 end
